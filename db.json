@@ -1,0 +1,22 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "Nguyễn Văn A",
+      "age": 20,
+      "email": "a@gmail.com"
+    },
+    {
+      "name": "hoadv",
+      "age": 35,
+      "email": "hoadv@gmail.com",
+      "id": 2
+    },
+    {
+      "name": "hoadv",
+      "age": 35,
+      "email": "hoadv@gmail.com",
+      "id": 3
+    }
+  ]
+}
