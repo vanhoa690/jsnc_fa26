@@ -5,11 +5,6 @@
 Sau bài học, sinh viên có thể:
 
 - Cài đặt và kiểm tra môi trường JavaScript.
-- Clone source code từ GitHub.
-- Mở và chạy project bằng VS Code.
-- Cài đặt thư viện bằng `npm install`.
-- Chạy JSON Server.
-- Chạy website bằng Live Server.
 - Hiểu cách khai báo biến trong JavaScript.
 - Biết sử dụng `let` và `const`.
 - Biết các kiểu dữ liệu cơ bản.
