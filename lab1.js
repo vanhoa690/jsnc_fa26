@@ -31,3 +31,24 @@ function sayHello() {
 }
 
 sayHello();
+
+function sayHi(name) {
+  console.log(name);
+}
+
+sayHi("hoadv");
+
+function sum(a, b) {
+  // return a + b;
+  console.log("aaa");
+  if (a) {
+    console.log(a);
+    return;
+  }
+  console.log(b);
+}
+
+sum(3, 4);
+
+// return: tra ve sau return
+// return: ket thuc fuction
