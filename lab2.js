@@ -48,4 +48,21 @@ const myStudents = [
   },
 ];
 
-console.log(myStudents[0].id);
+console.log(myStudents[0].name);
+
+// truy cap dom id = students
+let html = document.getElementById("students");
+let content = "";
+// canh so 1: ``
+for (let i = 0; i < myStudents.length; i++) {
+  content += `
+    <div>
+      <h3>Ten sinh vien: ${myStudents[i].name}</h3>
+      <h4>ID sinh vien: ${myStudents[i].id}</h4>
+    </div>
+  `;
+}
+
+html.innerHTML = content;
+
+console.log(html);
