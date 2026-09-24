@@ -21,3 +21,23 @@ const studentInfo = `
                     Tuổi: ${student.age}
                     `;
 console.log(studentInfo);
+
+const arr = [
+  {
+    id: 1,
+    name: "Nguyễn Văn An",
+    age: 20,
+  },
+];
+
+const arrInfo = `${arr[0].name}`;
+console.log(arrInfo);
+
+const html = `
+  <div>
+    <h3>${student.name}</h3>
+    <p>Mã: ${student.id}</p>
+    <p>Tuổi: ${student.age}</p>
+  </div>
+`;
+document.getElementById("app").innerHTML = html;
