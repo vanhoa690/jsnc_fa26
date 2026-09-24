@@ -53,3 +53,17 @@ const add2 = (a, b) => {
 const add3 = (a, b) => a + b; // return a + b
 console.log(add2(3, 4));
 console.log(add2(6, 4));
+
+// map
+const students = [
+  { id: 1, name: "An" }, // item
+  { id: 2, name: "Bình" }, // item
+  { id: 3, name: "Cường" }, // item
+];
+
+const mapInfo = students.map((item) => {
+  console.log(item);
+  return `ID: ${item.id} - Ten: ${item.name}`;
+});
+
+console.log(mapInfo);
