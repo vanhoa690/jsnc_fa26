@@ -63,6 +63,45 @@ for (let i = 0; i < myStudents.length; i++) {
   `;
 }
 
-html.innerHTML = content;
+// html.innerHTML = content;
 
 console.log(html);
+{
+  const students = [
+    {
+      id: 1,
+      name: "Nguyễn Văn An",
+      age: 20,
+    },
+    {
+      id: 2,
+      name: "Trần Văn Bình",
+      age: 21,
+    },
+    {
+      id: 3,
+      name: "Lê Văn Nam",
+      age: 20,
+    },
+  ];
+
+  const tbody = document.getElementById("students");
+
+  tbody.innerHTML = students
+    .map(
+      (student) => `
+        <tr class="hover:bg-gray-50">
+          <td class="px-4 py-2 border border-gray-300">${student.id}</td>
+          <td class="px-4 py-2 border border-gray-300">${student.name}</td>
+          <td class="px-4 py-2 border border-gray-300">${student.age}</td>
+          <td class="px-4 py-2 border border-gray-300">
+            <div class="flex items-center justify-center gap-2">
+              <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded">Edit</a>
+              <button class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded">Delete</button>
+            </div>
+          </td>
+        </tr>
+      `,
+    )
+    .join("");
+}
