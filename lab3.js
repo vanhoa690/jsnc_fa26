@@ -33,13 +33,13 @@ const arr = [
 const arrInfo = `${arr[0].name}`;
 console.log(arrInfo);
 
-const html = `
-  <div>
-    <h3>${student.name}</h3>
-    <p>Mã: ${student.id}</p>
-    <p>Tuổi: ${student.age}</p>
-  </div>
-`;
+// const html = `
+//   <div>
+//     <h3>${student.name}</h3>
+//     <p>Mã: ${student.id}</p>
+//     <p>Tuổi: ${student.age}</p>
+//   </div>
+// `;
 // document.getElementById("app").innerHTML = html;
 
 function add(a, b) {
@@ -66,4 +66,13 @@ const mapInfo = students.map((item) => {
   return `ID: ${item.id} - Ten: ${item.name}`;
 });
 
-console.log(mapInfo);
+const html = students.map((student) => {
+  return `
+    <tr>
+      <td>${student.id}</td>
+      <td>${student.name}</td>
+    </tr>
+  `;
+});
+console.log(html);
+document.getElementById("app").innerHTML = html;
