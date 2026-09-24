@@ -40,4 +40,16 @@ const html = `
     <p>Tuổi: ${student.age}</p>
   </div>
 `;
-document.getElementById("app").innerHTML = html;
+// document.getElementById("app").innerHTML = html;
+
+function add(a, b) {
+  return a + b;
+}
+// arrow function
+const add2 = (a, b) => {
+  return a + b;
+};
+
+const add3 = (a, b) => a + b; // return a + b
+console.log(add2(3, 4));
+console.log(add2(6, 4));
