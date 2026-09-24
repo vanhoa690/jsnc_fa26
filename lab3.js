@@ -56,10 +56,10 @@ console.log(add2(6, 4));
 
 // map
 
-const mapInfo = students.map((item) => {
-  console.log(item);
-  return `ID: ${item.id} - Ten: ${item.name}`;
-});
+// const mapInfo = students.map((item) => {
+//   console.log(item);
+//   return `ID: ${item.id} - Ten: ${item.name}`;
+// });
 
 const students = [
   { id: 1, name: "An", age: 22 },
