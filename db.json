@@ -1,22 +1,19 @@
 {
-  "students": [
+  "products": [
     {
       "id": 1,
-      "name": "Nguyễn Văn A",
-      "age": 20,
-      "email": "a@gmail.com"
+      "name": "iPhone 15",
+      "price": 25000000
     },
     {
-      "name": "hoadv",
-      "age": 35,
-      "email": "hoadv@gmail.com",
-      "id": 2
+      "id": 2,
+      "name": "Samsung S25",
+      "price": 22000000
     },
     {
-      "name": "hoadv",
-      "age": 35,
-      "email": "hoadv@gmail.com",
-      "id": 3
+      "id": 3,
+      "name": "Xiaomi 15",
+      "price": 18000000
     }
   ]
 }
