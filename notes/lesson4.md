@@ -1057,7 +1057,7 @@ STT | ID | Tên | Giá | Danh mục
 
 ---
 
-# 📝 Tổng kết Lesson 4
+# Tổng kết Lesson 4
 
 Trong bài này chúng ta đã học:
 
