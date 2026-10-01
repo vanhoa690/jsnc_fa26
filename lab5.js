@@ -11,6 +11,7 @@ document.getElementById("form-add").addEventListener("submit", (event) => {
   axios
     .post("http://localhost:3000/students", newStudent)
     .then(() => {
+      location.replace("index.html");
       alert("Them thanh cong");
     })
     .catch(() => {

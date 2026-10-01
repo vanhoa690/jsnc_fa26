@@ -430,7 +430,7 @@ index.html
 Sử dụng:
 
 ```js
-window.location.replace("index.html");
+location.replace("index.html");
 ```
 
 Ví dụ:
@@ -445,7 +445,7 @@ axios
   .then(() => {
     alert("Thêm sinh viên thành công");
 
-    window.location.replace("index.html");
+    location.replace("index.html");
   });
 ```
 
@@ -470,7 +470,7 @@ document.getElementById("form-add").addEventListener("submit", (e) => {
     .then(() => {
       alert("Thêm sinh viên thành công");
 
-      window.location.replace("index.html");
+      location.replace("index.html");
     });
 });
 ```
@@ -748,7 +748,7 @@ document.getElementById("form-add").addEventListener("submit", (e) => {
     .then(() => {
       alert("Thêm sinh viên thành công");
 
-      window.location.replace("index.html");
+      location.replace("index.html");
     });
 });
 ```
@@ -1073,7 +1073,7 @@ e.preventDefault();
 ## Chuyển trang
 
 ```js
-window.location.replace("index.html");
+location.replace("index.html");
 ```
 
 ---
