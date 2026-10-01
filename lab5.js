@@ -7,4 +7,13 @@ document.getElementById("form-add").addEventListener("submit", (event) => {
     age: age,
   };
   console.log(newStudent);
+
+  axios
+    .post("http://localhost:3000/students", newStudent)
+    .then(() => {
+      alert("Them thanh cong");
+    })
+    .catch(() => {
+      alert("them that bai");
+    });
 });

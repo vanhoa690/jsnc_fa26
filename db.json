@@ -5,6 +5,16 @@
       "name": "Nguyễn Văn A",
       "age": 20,
       "email": "a@gmail.com"
+    },
+    {
+      "name": "ten san pham",
+      "age": "22",
+      "id": 2
+    },
+    {
+      "name": "ReactJS Cơ Bản update",
+      "age": "55",
+      "id": 3
     }
   ],
   "products": [
