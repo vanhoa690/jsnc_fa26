@@ -40,6 +40,27 @@
       "name": "qweqwe",
       "age": "234234",
       "id": 8
+    },
+    {
+      "name": "",
+      "age": "",
+      "id": 9
+    },
+    {
+      "name": "",
+      "age": "",
+      "id": 10
+    },
+    {
+      "name": "",
+      "age": "",
+      "id": 11
+    },
+    {
+      "name": "asd",
+      "age": "45345",
+      "category": "Backend",
+      "id": 12
     }
   ],
   "products": [
