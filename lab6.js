@@ -11,8 +11,15 @@ const id = new URLSearchParams(location.search).get("id");
 //     alert("Server Offf");
 //   });
 
+function showLoading() {
+  document.getElementById("loading").style.display = "block";
+}
+function hideLoading() {
+  document.getElementById("loading").style.display = "none";
+}
 async function getStudent() {
   try {
+    showLoading();
     const res = await axios.get(`http://localhost:3000/students/${id}`);
     console.log(res.data);
     document.getElementById("name").value = res.data.name;
@@ -20,6 +27,8 @@ async function getStudent() {
   } catch (error) {
     console.error(error);
     alert(error.message);
+  } finally {
+    hideLoading();
   }
 }
 

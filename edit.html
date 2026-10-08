@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      #loading {
+        display: none;
+      }
+    </style>
   </head>
   <body>
     <nav class="bg-blue-600 text-white shadow">
@@ -23,7 +28,7 @@
     </nav>
     <div class="max-w-6xl mx-auto mt-10 px-4 text-center">
       <h1 class="text-2xl font-semibold mb-6">Cập nhật</h1>
-
+      <p id="loading">Loading...</p>
       <form id="form-edit" class="space-y-6">
         <!-- Text input -->
         <div>
