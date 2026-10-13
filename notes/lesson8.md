@@ -233,164 +233,31 @@ Tạo file `register.html` với nội dung sau:
 Tạo file `register.js`:
 
 ```javascript
-const API_URL = "http://localhost:3000";
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-const registerForm = document.querySelector("#registerForm");
-const fullNameInput = document.querySelector("#fullName");
-const emailInput = document.querySelector("#email");
-const passwordInput = document.querySelector("#password");
-const confirmPasswordInput = document.querySelector("#confirmPassword");
-
-const submitButton = document.querySelector("#submitButton");
-const loading = document.querySelector("#loading");
-const message = document.querySelector("#message");
-
-const fullNameError = document.querySelector("#fullNameError");
-const emailError = document.querySelector("#emailError");
-const passwordError = document.querySelector("#passwordError");
-const confirmPasswordError = document.querySelector("#confirmPasswordError");
-
-function showMessage(text, type = "success") {
-  message.textContent = text;
-  message.className = "mb-4 rounded-lg px-4 py-3 text-sm";
-
-  if (type === "success") {
-    message.classList.add("bg-green-100", "text-green-700");
-  } else {
-    message.classList.add("bg-red-100", "text-red-700");
-  }
-
-  message.classList.remove("hidden");
-}
-
-function clearMessage() {
-  message.textContent = "";
-  message.classList.add("hidden");
-}
-
-function setFieldError(element, text = "") {
-  element.textContent = text;
-
-  if (text) {
-    element.classList.remove("hidden");
-  } else {
-    element.classList.add("hidden");
-  }
-}
-
-function clearErrors() {
-  setFieldError(fullNameError);
-  setFieldError(emailError);
-  setFieldError(passwordError);
-  setFieldError(confirmPasswordError);
-}
-
-function validateForm() {
-  clearErrors();
-
-  const fullName = fullNameInput.value.trim();
-  const email = emailInput.value.trim();
-  const password = passwordInput.value;
-  const confirmPassword = confirmPasswordInput.value;
-
-  let isValid = true;
-
-  if (!fullName) {
-    setFieldError(fullNameError, "Vui lòng nhập họ và tên.");
-    isValid = false;
-  } else if (fullName.length < 2) {
-    setFieldError(fullNameError, "Họ và tên phải có ít nhất 2 ký tự.");
-    isValid = false;
-  }
-
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
+document.getElementById("registerForm").addEventListener("submit", (event) => {
+  event.preventDefault(); // chan reload
+  const fullName = document.getElementById("fullName").value; // data input
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+  const newUser = {
+    name: fullName,
+    email,
+    password,
+  };
   if (!email) {
-    setFieldError(emailError, "Vui lòng nhập email.");
-    isValid = false;
-  } else if (!emailPattern.test(email)) {
-    setFieldError(emailError, "Email không đúng định dạng.");
-    isValid = false;
-  }
-
-  if (!password) {
-    setFieldError(passwordError, "Vui lòng nhập mật khẩu.");
-    isValid = false;
-  } else if (password.length < 6) {
-    setFieldError(passwordError, "Mật khẩu phải có ít nhất 6 ký tự.");
-    isValid = false;
-  }
-
-  if (!confirmPassword) {
-    setFieldError(confirmPasswordError, "Vui lòng xác nhận mật khẩu.");
-    isValid = false;
-  } else if (password !== confirmPassword) {
-    setFieldError(confirmPasswordError, "Mật khẩu xác nhận không khớp.");
-    isValid = false;
-  }
-
-  return isValid;
-}
-
-registerForm.addEventListener("submit", async (event) => {
-  event.preventDefault();
-  clearMessage();
-
-  if (!validateForm()) {
-    showMessage("Vui lòng kiểm tra lại thông tin đã nhập.", "error");
+    alert("Nhap email");
     return;
   }
-
-  const fullName = fullNameInput.value.trim();
-  const email = emailInput.value.trim().toLowerCase();
-  const password = passwordInput.value;
-
-  submitButton.disabled = true;
-  loading.classList.remove("hidden");
-
-  try {
-    // JSON Server Auth đăng ký bằng email và password.
-    // fullName được gửi kèm để lưu thông tin bổ sung nếu phiên bản/cấu hình hỗ trợ.
-    const response = await axios.post(`${API_URL}/register`, {
-      name: fullName,
-      fullName,
-      email,
-      password,
+  axios
+    .post("http://localhost:3000/register", newUser)
+    .then(() => {
+      location.replace("index.html");
+      alert("Đăng ký thành công");
+    })
+    .catch(() => {
+      alert("Đăng ký thất bại");
     });
-
-    console.log("Registration response:", response.data);
-
-    showMessage(
-      "Đăng ký thành công! Bạn có thể đăng nhập bằng tài khoản vừa tạo.",
-    );
-
-    registerForm.reset();
-  } catch (error) {
-    console.error("Registration error:", error);
-
-    if (error.response) {
-      const status = error.response.status;
-
-      if (status === 400 || status === 409) {
-        showMessage(
-          "Không thể đăng ký. Email có thể đã được sử dụng hoặc dữ liệu không hợp lệ.",
-          "error",
-        );
-      } else {
-        showMessage("Máy chủ trả về lỗi. Vui lòng thử lại.", "error");
-      }
-    } else if (error.request) {
-      showMessage(
-        "Không kết nối được máy chủ. Hãy kiểm tra JSON Server đang chạy hay chưa.",
-        "error",
-      );
-    } else {
-      showMessage("Đã xảy ra lỗi khi gửi yêu cầu.", "error");
-    }
-  } finally {
-    submitButton.disabled = false;
-    loading.classList.add("hidden");
-  }
 });
 ```
 
@@ -420,9 +287,8 @@ Hàm `validateForm()` kiểm tra:
 **3. Gửi yêu cầu bằng Axios**
 
 ```javascript
-const response = await axios.post(`${API_URL}/register`, {
+const response = await axios.post("http://localhost:3000/register", {
   name: fullName,
-  fullName,
   email,
   password,
 });
