@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "db": "json-server --watch db.json --port 3000"
+    "db": "json-server db.json -m ./node_modules/json-server-auth --port 3000"
   },
   "dependencies": {
     "json-server": "^0.17.4"
