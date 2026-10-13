@@ -266,9 +266,11 @@ document.getElementById("registerForm").addEventListener("submit", (event) => {
 **1. Ngăn form tải lại trang**
 
 ```javascript
-registerForm.addEventListener("submit", async (event) => {
-  event.preventDefault();
-});
+document
+  .getElementById("registerForm")
+  .addEventListener("submit", async (event) => {
+    event.preventDefault();
+  });
 ```
 
 `preventDefault()` ngăn hành vi submit mặc định của trình duyệt. Nhờ vậy, JavaScript có thể kiểm tra dữ liệu và gửi yêu cầu API.
