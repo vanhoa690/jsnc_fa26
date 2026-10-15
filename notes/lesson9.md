@@ -487,6 +487,7 @@ Lỗi Nguyên nhân cần kiểm tra
 
 ---
 
+```text
 `Network Error` JSON Server chưa chạy hoặc sai URL
 
 Không chuyển đến trang chủ Kiểm tra response API và lệnh
@@ -494,6 +495,7 @@ Không chuyển đến trang chủ Kiểm tra response API và lệnh
 
 `add.html` luôn chuyển về Login Không có Token hoặc lưu sai tên
 khóa
+```
 
 ---
 
@@ -542,6 +544,7 @@ Thành phần Công dụng
 
 ---
 
+```text
 `addEventListener()` Lắng nghe sự kiện
 `preventDefault()` Ngăn hành vi mặc định của Form
 `trim()` Loại bỏ khoảng trắng ở đầu và cuối chuỗi
@@ -555,6 +558,7 @@ Thành phần Công dụng
 `JSON.parse()` Chuyển chuỗi JSON thành object
 `window.location.replace()` Điều hướng sang trang khác
 `classList.add()` / `classList.remove()` Thêm hoặc xóa class CSS
+```
 
 ### Phân biệt các khái niệm
 
