@@ -280,8 +280,8 @@ document.getElementById("loginForm").addEventListener("submit", (event) => {
     .post("http://localhost:3000/login", userLogin)
     .then((res) => {
       // Lưu Token và thông tin người dùng.
-      localStorage.setItem("accessToken", res.accessToken);
-      localStorage.setItem("user", JSON.stringify(res.user));
+      localStorage.setItem("accessToken", res.data.accessToken);
+      localStorage.setItem("user", JSON.stringify(res.data.user));
       location.replace("index.html");
       alert("Đăng nhập thành công");
     })
@@ -353,7 +353,7 @@ ngay đầu phần `<head>`, trước khi trình duyệt hiển thị nội dung
   const accessToken = localStorage.getItem("accessToken");
 
   if (!accessToken) {
-    window.location.replace("login.html");
+    location.replace("login.html");
   }
 </script>
 ```
@@ -370,7 +370,7 @@ Ví dụ cấu trúc tối thiểu của `add.html`:
 
     <script>
       if (!localStorage.getItem("accessToken")) {
-        window.location.replace("login.html");
+        location.replace("login.html");
       }
     </script>
 
